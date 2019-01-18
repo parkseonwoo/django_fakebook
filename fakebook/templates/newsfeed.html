@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title>
+            뉴 스피드 페이지에 온 것을 환영합니다.
+        </title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="btn1">
+                <a href="/new/"><img src="/static/ic_pencil.jpg" width="27px" style="margin:9px 0 0 13px;"></a>
+            </div>
+            <div class="search">
+                <input type="text" class="search-bar" placeholder="Search">
+            </div>
+            <div class="btn2">
+                <img src="/static/ic_info.jpg", width="27px", style="margin:9px 13px 0 0">
+
+            </div>
+        </div>
+        <div class="container">
+            {% for feed in articles %}
+                <div class="feed">
+                    <h3 class="name"> {{ feed.author }}</h3>
+                    <div class="date">{{ feed.created_at }}</div>
+                    <a href="#" class="title">{{ feed.title }}</a>
+                    <p class="content">{{ feed.text }}</p>
+                    <div class="accessory">
+                        <img src="/static/ic_like.jpg" width="16px"> Like
+                        <img src="/static/ic_comment.jpg" width="16px"> Comments
+                    </div> 
+                </div>
+            {% endfor %}
+ 
+        </div>
+        
+        <div class="footer">
+            <div class="tab1"><img src="/static/ic_feed.jpg" width="22px" style="margin-top: 14px"></div>
+            <div class="tab2"><img src="/static/ic_person.jpg" width="22px" style="margin-top: 14px"></div>
+            <div class="tab3"><img src="/static/ic_globe.jpg" width="22px" style="margin-top: 14px"></div>
+            <div class="tab4"><img src="/static/ic_etc.jpg" width="22px" style="margin-top: 14px"></div>
+        </div>
+
+    </body>
+</html>
